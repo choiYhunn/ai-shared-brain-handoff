@@ -113,3 +113,13 @@ Not “Eagle Eye with comments”.
 
 Position:
 A mainstream political social app where every argument can open the underlying public record in one tap.
+
+
+## V10.6 controversy-first editorial grammar
+- Feed hook is not a press-release summary. Lead with the specific point that makes people say “잠깐, 이게 맞아?”.
+- Community/YouTube/SNS rhetoric is a discovery layer, not evidence. Preserve the tension in natural Korean, then verify the premises against primary/reliable sources.
+- Attribute unproven conclusions in the hook: “정황은 X 같은데…”, “X라는 반응이 나온 이유”, “그런데 공식 설명은 Y”. Never silently convert a viral inference into a confirmed fact.
+- Slide order: public reaction/tension → concrete facts that created it → strongest counter/explanation → what evidence would settle it.
+- Do not flatten controversy into “양측 입장”. Weight each claim by its actual evidence and state what remains unknown.
+- Avoid AI/editorial filler such as “왜 지금 봐야 하나”, “주목된다”, “논란이 예상된다”. Prefer verbs, numbers, direct contrasts and conversational questions.
+- Apply the same grammar regardless of politician, party or administration.

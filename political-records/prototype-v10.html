@@ -7,22 +7,22 @@
 <title>시차 — 오늘의 정치, 기록과 함께</title>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css">
-<link rel="stylesheet" href="./assets/v10.css">
+<link rel="stylesheet" href="./assets/v10.css?v=10.5">
 </head>
 <body>
 <header class="appbar">
   <div class="appbar-in">
     <button class="brand" onclick="go('today')">시차</button>
     <div class="app-actions">
-      <button class="round" aria-label="검색" onclick="openSearch()">⌕</button>
-      <button class="round avatar-me" aria-label="내 활동" onclick="openMy()">나</button>
+      <button class="icon-btn" aria-label="검색" onclick="openSearch()"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></button>
+      <button class="icon-btn" aria-label="내 활동" onclick="openMy()"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c1.3-3.6 4.2-5.4 7.5-5.4s6.2 1.8 7.5 5.4"/></svg></button>
     </div>
   </div>
 </header>
 
 <div class="search-layer" id="searchLayer">
   <div class="search-top">
-    <button class="back" onclick="closeSearch()">←</button>
+    <button class="icon-btn" aria-label="닫기" onclick="closeSearch()"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
     <input id="globalSearch" placeholder="인물, 이슈, 발언 검색" autocomplete="off">
   </div>
   <div class="search-results" id="searchResults"></div>
@@ -30,49 +30,42 @@
 
 <main>
   <section class="screen on" id="screen-today">
-    <div class="hero-copy">
-      <b id="todayDate">오늘</b>
-      <h1>지금, 왜 시끄러운지.</h1>
-      <p>사진으로 보고 · 쟁점을 읽고 · 원문까지 확인.</p>
-    </div>
-    <div class="today-feed" id="todayFeed"></div>
+    <p class="feed-date" id="todayDate">오늘</p>
+    <div class="feed" id="todayFeed"></div>
   </section>
 
   <section class="screen" id="screen-talk">
     <div class="page-head">
-      <div><h1>토론</h1><p>이슈별로 보고, 말하고, 근거를 붙여요.</p></div>
-      <button class="primary-small" onclick="openComposer()">글쓰기</button>
+      <h1>토론</h1>
+      <button class="text-btn" onclick="openComposer()">글쓰기</button>
     </div>
-    <div class="room-strip" id="roomStrip"></div>
-    <div class="talk-toolbar">
+    <div class="tabs" id="roomStrip"></div>
+    <div class="sort">
       <button class="on" data-talksort="new" onclick="setTalkSort('new')">최신</button>
-      <button data-talksort="reply" onclick="setTalkSort('reply')">댓글 많은 글</button>
+      <button data-talksort="reply" onclick="setTalkSort('reply')">댓글 많은 순</button>
     </div>
-    <div class="post-feed" id="postFeed"></div>
+    <div id="postFeed"></div>
   </section>
 
   <section class="screen" id="screen-people">
-    <div class="page-head">
-      <div><h1>인물</h1><p>밖으로 나가지 않고 여기서 끝까지.</p></div>
-    </div>
-    <div class="people-search">
-      <input id="peopleSearch" placeholder="이름, 정당, 지역구 검색">
-    </div>
-    <div class="people-featured" id="peopleFeatured"></div>
-    <div class="people-state" id="peopleState"></div>
-    <div class="people-list" id="peopleList"></div>
+    <div class="page-head"><h1>인물</h1></div>
+    <div class="field-wrap"><input class="field" id="peopleSearch" placeholder="이름, 정당, 지역구" autocomplete="off"></div>
+    <div class="faces" id="peopleFeatured"></div>
+    <p class="list-note" id="peopleState"></p>
+    <div id="peopleList"></div>
   </section>
 </main>
 
 <nav class="nav">
-  <button class="on" data-nav="today" onclick="go('today')"><i>●</i><span>오늘</span></button>
-  <button data-nav="talk" onclick="go('talk')"><i>◌</i><span>토론</span></button>
-  <button data-nav="people" onclick="go('people')"><i>◎</i><span>인물</span></button>
+  <button class="on" data-nav="today" onclick="go('today')"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5.5h-5V20H4z"/></svg><span>오늘</span></button>
+  <button data-nav="talk" onclick="go('talk')"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.1A8 8 0 1 1 20 12z"/></svg><span>토론</span></button>
+  <button data-nav="people" onclick="go('people')"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 19.5c1-3.2 3.5-4.8 6.5-4.8s5.5 1.6 6.5 4.8"/><path d="M15.5 5.2a3.4 3.4 0 0 1 0 6.6M18 14.9c1.8.6 3 1.9 3.6 4.6"/></svg><span>인물</span></button>
 </nav>
 
 <div class="scrim" id="scrim" onclick="if(event.target===this)closeSheet()"><article class="sheet" id="sheet"></article></div>
+<div class="asheet" id="asheet" onclick="if(event.target===this)closeMore()"><div class="asheet-in" id="asheetIn"></div></div>
 <div class="toast" id="toast"></div>
 
-<script src="./assets/v10.js"></script>
+<script src="./assets/v10.js?v=10.5"></script>
 </body>
 </html>
