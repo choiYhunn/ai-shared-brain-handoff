@@ -4,7 +4,7 @@ Public, deliberately filtered handoff material for collaboration with external A
 
 ## Security boundary
 This repository is NOT the canonical AI Shared Brain. The authoritative repository remains private.
-Only files explicitly reviewed as public-safe should be mirrored here. Never copy private memory, credentials, personal data, company-confidential material, Samsung field-practice/internal code or notes, PAT/SSAT proprietary material, or unrelated private project context.
+Only files explicitly reviewed as public-safe should be mirrored here. Never copy private memory, credentials, personal data, company-confidential material, employer internship code, notes, or proprietary test tooling, or unrelated private project context.
 
 ## Current handoffs
 - `political-records/` — public-safe UI/product context for the Korean political-records social product ("시차").
